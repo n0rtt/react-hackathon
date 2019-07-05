@@ -1,6 +1,6 @@
 import React from 'react'
 
-Search=(handleChange)=>(
+const Search=(handleChange)=>(
         <div>
             <select name="" id="" onChange={handleChange}>
                 <option value=""></option>
