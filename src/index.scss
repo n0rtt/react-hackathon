@@ -30,6 +30,10 @@ body {
     margin-left: 1rem;
   }
 
+  input {
+    margin-left: .5rem;
+  }
+
 }
 
 .flight-list {
@@ -69,4 +73,19 @@ body {
 
 .stopovers {
   padding: .5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.prev {
+  margin-right: 1rem;
 }

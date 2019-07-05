@@ -60,10 +60,12 @@ const App = () => {
                 handleChangeDirect={handleChangeDirect}
                 handleClick={handleClick} />
 
-            {(loading) ? <Spinner /> : <FlightList flights={flights} currency={currency} page={page}/>}
-        <button onClick={()=>setPage((prevState)=>prevState-5)}>-</button>
-        <button onClick={()=>setPage((prevState)=>prevState+5)}>+</button>
-        
+            {(loading) ? <Spinner /> : <FlightList flights={flights} currency={currency} page={page} />}
+            <div className='buttons'>
+                <button className='page prev' onClick={() => setPage((prevState) => prevState - 5)}>Previous</button>
+                <button className='page' onClick={() => setPage((prevState) => prevState + 5)}>Next</button>
+            </div>
+
         </>
     );
 }
