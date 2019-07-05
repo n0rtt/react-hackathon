@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background: green;
+  background: dodgerblue;
   color: #fff;
   height: 100vh;
 }
@@ -17,4 +17,25 @@ body {
   display: flex;
   justify-content: center;
 
+}
+
+.flight-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.flight {
+  padding: 1rem;
+}
+
+.cities {
+  display: flex;
+  font-size: 1.5rem;
+
+  div:first-child {
+    margin: 0 1rem;
+  }
 }
