@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import FlightList from '../flight-list/FlightList.jsx'
+import Search from '../search/Search.jsx'
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
 
     return (
         <>
+            <Search/>
             {(loading) && <div>Loading...</div>}
             <FlightList flights={flights} currency={currency} />
 

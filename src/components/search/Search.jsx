@@ -1,8 +1,8 @@
 import React from 'react'
 
-Search=()=>(
+Search=(handleChange)=>(
         <div>
-            <select name="" id="" onClick={}>
+            <select name="" id="" onChange={handleChange}>
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
