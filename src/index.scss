@@ -6,3 +6,15 @@ html {
   font-family: sans-serif;
   font-size: 18px;
 }
+
+body {
+  background: green;
+  color: #fff;
+  height: 100vh;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+
+}
