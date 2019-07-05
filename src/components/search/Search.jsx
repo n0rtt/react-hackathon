@@ -18,7 +18,7 @@ const Search = ({ handleChangeArrival, handleChangeDeparture, handleChangeDirect
             <option value="MXP">Milano</option>
             <option value="ATH">Athens</option>
         </select>
-        <input type="checkbox" onChange={handleChangeDirect} />
+        Direct flights <input type="checkbox" onChange={handleChangeDirect} />
         <button onClick={handleClick}>Search</button>
     </div>
 )
