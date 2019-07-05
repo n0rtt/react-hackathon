@@ -1,9 +1,15 @@
 import React from 'react'
 
-function Flight({flight}) {
+function Flight({flight,currency}) {
     return (
         <div>
-            <div>{flight.data.countryFrom}</div>
+            <div>{flight.flyFrom}</div>
+            <div>{flight.flyTo}</div>
+            <div>{flight.cityFrom}</div>
+            <div>{flight.cityTo}</div>
+            <div>{flight.dTime}</div>
+            <div>{flight.aTime}</div>
+            <div>{flight.price}{currency}</div>
         </div>
     )
 }
