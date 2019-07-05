@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import FlightList from '../flight-list/FlightList.jsx'
 import Search from '../search/Search.jsx'
+import Spinner from '../spinner'
 
 const App = () => {
 

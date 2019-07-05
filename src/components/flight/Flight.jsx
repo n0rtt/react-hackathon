@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Flight=({flight,currency})=>{
+const Flight = ({ flight, currency }) => {
     return (
         <div>
             <div>{flight.flyFrom}</div>
