@@ -11,18 +11,24 @@ const App = () => {
     const [city, setCity] = useState({departure:'PRG',arrival:'VLC'})
 
     const handleChangeDeparture = (e) => {
-        setCity(e.target.value)
-        console.log(city.departure)
-    }
-    const handleChangeArrival = (e) => {
+        const val=e.target.value
         setCity((prevState)=>{
             return {
                 ...prevState,
-                arrival:e.target.value,
+                departure:val,
             }
         }
         )
-        console.log(city.arrival)
+    }
+    const handleChangeArrival = (e) => {
+        const val=e.target.value
+        setCity((prevState)=>{
+            return {
+                ...prevState,
+                arrival:val,
+            }
+        }
+        )
     }
     const handleClick = () => {
         setLoading(true)
@@ -30,7 +36,7 @@ const App = () => {
     }
 
     const updateFlights = () => {
-        fetch(`https://api.skypicker.com/flights?flyFrom=PRG&to=${city.departure}&dateFrom=06/07/2019&partner=picky&limit=5`)
+        fetch(`https://api.skypicker.com/flights?flyFrom=${city.departure}&to=${city.arrival}&dateFrom=06/07/2019&partner=picky&limit=5`)
             .then(res => res.json())
             .then(data => {
                 setFlights(data.data)
