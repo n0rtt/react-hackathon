@@ -43,7 +43,7 @@ const App = () => {
     }
 
     const updateFlights = () => {
-        fetch(`https://api.skypicker.com/flights?flyFrom=${city.departure}&to=${city.arrival}${checked ? '&max_stopovers=0' : ''}&dateFrom=06/07/2019&partner=picky&limit=15`)
+        fetch(`https://api.skypicker.com/flights?flyFrom=${city.departure}&to=${city.arrival}${checked ? '&max_stopovers=0' : ''}&dateFrom=06/07/2019&partner=picky&limit=17`)
             .then(res => res.json())
             .then(data => {
                 setFlights(data.data)
@@ -60,10 +60,10 @@ const App = () => {
                 handleChangeDirect={handleChangeDirect}
                 handleClick={handleClick} />
 
-            {(loading) ? <Spinner /> : <FlightList flights={flights} currency={currency} page={page} />}
+            <div className='spinner'>{(loading) ? <Spinner /> : <FlightList flights={flights} currency={currency} page={page} />}</div>
             <div className='buttons'>
-                <button className='page prev' onClick={() => setPage((prevState) => prevState - 5)}>Previous</button>
-                <button className='page' onClick={() => setPage((prevState) => prevState + 5)}>Next</button>
+                {page !== 0 && <button className='page prev' onClick={() => setPage((prevState) => prevState - 5)}>Previous</button>}
+                {page < flights.length - 5 && <button className='page' onClick={() => setPage((prevState) => prevState + 5)}>Next</button>}
             </div>
 
         </>

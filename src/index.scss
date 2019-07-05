@@ -42,6 +42,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  width: 100%;
 }
 
 .flight {
@@ -78,6 +79,7 @@ body {
 .buttons {
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .page {
@@ -88,4 +90,9 @@ body {
 
 .prev {
   margin-right: 1rem;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
 }
