@@ -10,11 +10,11 @@ const App = () => {
     const [loading, setLoading] = useState(false)
     const [city, setCity] = useState('VLC')
 
-    const handleChange=(e)=>{
+    const handleChange = (e) => {
         setCity(e.target.value)
         console.log(city)
     }
-    const handleClick=()=>{
+    const handleClick = () => {
         setLoading(true)
         updateFlights()
     }
@@ -29,13 +29,11 @@ const App = () => {
             })
     }
 
-   
-
-    
     return (
         <>
-            <Search handleChange={handleChange} handleClick={handleClick}/>
-            {(loading) && <div>Loading...</div>}
+
+            <Search handleChange={handleChange} handleClick={handleClick} />
+            {(loading) && <Spinner />}
             <FlightList flights={flights} currency={currency} />
 
         </>
