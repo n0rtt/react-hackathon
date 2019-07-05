@@ -75,6 +75,11 @@ body {
   padding: .5rem;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
 .page {
   padding: 1rem;
   border-radius: 10px;
