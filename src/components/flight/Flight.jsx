@@ -10,6 +10,7 @@ const Flight = ({ flight, currency }) => {
             <div>{flight.dTime}</div>
             <div>{flight.aTime}</div>
             <div>{flight.price}{currency}</div>
+            <div>{flight.route.length-1}</div>
         </div>
     )
 }

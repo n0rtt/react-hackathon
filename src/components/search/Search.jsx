@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Search = ({ handleChangeArrival, handleChangeDeparture, handleClick }) => (
+const Search = ({ handleChangeArrival, handleChangeDeparture,handleChangeDirect, handleClick }) => (
     <div>
         <select onChange={handleChangeDeparture}>
             <option value="PRG">Prague</option>
@@ -15,6 +15,7 @@ const Search = ({ handleChangeArrival, handleChangeDeparture, handleClick }) => 
             <option value="MXP">Milano</option>
             <option value="ATH">Athens</option>
         </select>
+        <input type="checkbox" onChange={handleChangeDirect}/>
         <button onClick={handleClick}>Search</button>
     </div>
 )
