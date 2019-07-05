@@ -1,7 +1,10 @@
 import React from 'react'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-const Search = ({ handleChangeArrival, handleChangeDeparture,handleChangeDirect, handleClick }) => (
-    <div>
+
+const Search = ({ handleChangeArrival, handleChangeDeparture, handleChangeDirect, handleClick }) => (
+
+    <div className='search-bar'>
         <select onChange={handleChangeDeparture}>
             <option value="PRG">Prague</option>
             <option value="BER">Berlin</option>
@@ -15,7 +18,7 @@ const Search = ({ handleChangeArrival, handleChangeDeparture,handleChangeDirect,
             <option value="MXP">Milano</option>
             <option value="ATH">Athens</option>
         </select>
-        <input type="checkbox" onChange={handleChangeDirect}/>
+        <input type="checkbox" onChange={handleChangeDirect} />
         <button onClick={handleClick}>Search</button>
     </div>
 )
