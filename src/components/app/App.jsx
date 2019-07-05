@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import FlightList from '../flight-list/FlightList.jsx'
+import Spinner from '../spinner'
 
 const App = () => {
 
@@ -24,7 +25,7 @@ const App = () => {
 
     return (
         <>
-            {(loading) && <div>Loading...</div>}
+            {(loading) && <Spinner />}
             <FlightList flights={flights} currency={currency} />
 
         </>

@@ -2,7 +2,7 @@ import React from 'react'
 import Flight from '../flight/Flight.jsx'
 
 
-FlightList=({ flights, currency })=>{
+const FlightList = ({ flights, currency }) => {
     return (
         <div>
             {flights.map((flight, index) =>
