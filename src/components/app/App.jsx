@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import FlightList from '../flight-list/FlightList.jsx'
 import Search from '../search/Search.jsx'
 import Spinner from '../spinner'
@@ -32,7 +32,7 @@ const App = () => {
         )
     }
 
-    const handleChangeDirect=e=>e.target.checked ? setChecked(true):setChecked(false)
+    const handleChangeDirect = e => e.target.checked ? setChecked(true) : setChecked(false)
 
 
     const handleClick = () => {
@@ -41,7 +41,7 @@ const App = () => {
     }
 
     const updateFlights = () => {
-        fetch(`https://api.skypicker.com/flights?flyFrom=${city.departure}&to=${city.arrival}${checked?'&max_stopovers=0':''}&dateFrom=06/07/2019&partner=picky&limit=5`)
+        fetch(`https://api.skypicker.com/flights?flyFrom=${city.departure}&to=${city.arrival}${checked ? '&max_stopovers=0' : ''}&dateFrom=06/07/2019&partner=picky&limit=5`)
             .then(res => res.json())
             .then(data => {
                 setFlights(data.data)
@@ -53,11 +53,11 @@ const App = () => {
     return (
         <>
 
-            <Search 
-            handleChangeDeparture={handleChangeDeparture} 
-            handleChangeArrival={handleChangeArrival} 
-            handleChangeDirect={handleChangeDirect} 
-            handleClick={handleClick} />
+            <Search
+                handleChangeDeparture={handleChangeDeparture}
+                handleChangeArrival={handleChangeArrival}
+                handleChangeDirect={handleChangeDirect}
+                handleClick={handleClick} />
 
             {(loading) ? <Spinner /> : <FlightList flights={flights} currency={currency} />}
 
