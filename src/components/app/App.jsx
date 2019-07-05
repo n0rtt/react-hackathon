@@ -41,7 +41,7 @@ const App = () => {
     }
 
     const updateFlights = () => {
-        fetch(`https://api.skypicker.com/flights?flyFrom=${city.departure}&to=${city.arrival}&dateFrom=06/07/2025&partner=picky&limit=5`)
+        fetch(`https://api.skypicker.com/flights?flyFrom=${city.departure}&to=${city.arrival}&dateFrom=06/07/2019&partner=picky&limit=5`)
             .then(res => res.json())
             .then(data => {
                 setFlights(data.data)
@@ -54,7 +54,7 @@ const App = () => {
         <>
 
             <Search handleChangeDeparture={handleChangeDeparture} handleChangeArrival={handleChangeArrival} handleClick={handleClick} />
-            
+
             {(loading) ? <Spinner /> : <FlightList flights={flights} currency={currency} />}
 
         </>
