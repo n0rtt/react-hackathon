@@ -13,8 +13,8 @@ const Flight = ({ flight, currency }) =>  (
                     <div>{flight.flyTo}</div>
                 </div>
                 <div>
-                    <div>{DateTime.fromMillis(flight.dTime * 1000).toFormat('hh:mm')}</div>
-                    <div>{DateTime.fromMillis(flight.aTime * 1000).toFormat('hh:mm')}</div>
+                    <div>{DateTime.fromMillis(flight.dTime * 1000).toFormat('yyyy-MM-dd HH:mm')}</div>
+                    <div>{DateTime.fromMillis(flight.aTime * 1000).toFormat('yyyy-MM-dd HH:mm')}</div>
                 </div>
                 <div>
                     <div>{flight.price}{currency}</div>
