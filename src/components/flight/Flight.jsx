@@ -1,31 +1,30 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap';
+import { DateTime } from 'luxon';
 
-const Flight = ({ flight, currency }) => {
-    return (
-        <Container>
-            <Col>
-                <Row>
+const Flight = ({ flight, currency }) =>  (
+        <div>
+            <div>
+                <div>
                     <div>{flight.cityFrom}</div>
                     <div>{flight.flyFrom}</div>
-                </Row>
-                <Row>
+                </div>
+                <div>
                     <div>{flight.cityTo}</div>
                     <div>{flight.flyTo}</div>
-                </Row>
-                <Row>
-                    <div>{flight.dTime}</div>
-                    <div>{flight.aTime}</div>
-                </Row>
-                <Row>
+                </div>
+                <div>
+                    <div>{DateTime.fromMillis(flight.dTime * 1000).toFormat('hh:mm')}</div>
+                    <div>{DateTime.fromMillis(flight.aTime * 1000).toFormat('hh:mm')}</div>
+                </div>
+                <div>
                     <div>{flight.price}{currency}</div>
-                </Row>
-                <Row>
+                </div>
+                <div>
                     <div>{flight.route.length - 1}</div>
-                </Row>
-            </Col>
-        </Container>
+                </div>
+            </div>
+        </div>
     )
-}
+
 
 export default Flight
