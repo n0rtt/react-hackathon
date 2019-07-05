@@ -2,11 +2,11 @@ import React from 'react'
 import Flight from '../flight/Flight.jsx'
 
 
-function FlightList({flights,currency}) {
+function FlightList({ flights, currency }) {
     return (
         <div>
-            {flights.map(flight=>
-                <Flight flight={flight} currency={currency}/>
+            {flights.map((flight, index) =>
+                <Flight key={index} flight={flight} currency={currency} />
             )}
         </div>
     )

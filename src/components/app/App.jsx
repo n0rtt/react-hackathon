@@ -5,6 +5,7 @@ const App = () => {
 
     const [flights, setFlights] = useState([])
     const [currency, setCurrency] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const updateFlights = () => {
         fetch('https://api.skypicker.com/flights?flyFrom=PRG&to=VLC&dateFrom=06/07/2019&partner=picky&limit=5')
@@ -12,17 +13,20 @@ const App = () => {
             .then(data => {
                 setFlights(data.data)
                 setCurrency(data.currency)
+                setLoading(false)
             })
     }
 
     useEffect(() => {
+        setLoading(true)
         updateFlights()
-    },[])
+    }, [])
 
     return (
         <>
-        <FlightList flights={flights} currency={currency}/>
-            
+            {(loading) && <div>Loading...</div>}
+            <FlightList flights={flights} currency={currency} />
+
         </>
     );
 }
